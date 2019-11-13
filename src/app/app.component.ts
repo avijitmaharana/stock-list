@@ -7,7 +7,8 @@ import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-  value = 30;
+  value: number;
+  total;
   checkBox: FormGroup;
   constructor(){
     this.checkBox = new FormGroup({
@@ -27,5 +28,17 @@ export class AppComponent  {
         'chk': new FormControl()
       })
     )
+    this.onChange();
+  }
+  onChange(){
+    // console.log(this.checkBox.get('chkArr').value);
+    this.total = this.checkBox.get('chkArr').value;
+    let count = 0;
+    for(let i in this.total){
+      if(this.total[i].chk){
+        ++count; 
+      }
+    }
+    this.value = (count/this.total.length)*100;
   }
 }
