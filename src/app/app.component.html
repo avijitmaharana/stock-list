@@ -10,7 +10,7 @@
 		<div style="margin-top:10px;" formArrayName="chkArr">
 			<div *ngFor="let ch of controls;let i = index" [formGroupName]="i">
 				<mat-checkbox formControlName="chk" (change)="onChange()" color="warn" style="margin-left:20px;">check me!
-				</mat-checkbox>
+				</mat-checkbox>  <span (click)="removeItem(i)" style="margin-left:20px;color:red;cursor:pointer">X</span>
 			</div>
 		</div>
 	</form>

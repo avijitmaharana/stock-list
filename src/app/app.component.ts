@@ -30,6 +30,10 @@ export class AppComponent  {
     )
     this.onChange();
   }
+  removeItem(index){
+    (this.checkBox.get('chkArr') as FormArray).removeAt(index);
+    this.onChange();
+  }
   onChange(){
     // console.log(this.checkBox.get('chkArr').value);
     this.total = this.checkBox.get('chkArr').value;
