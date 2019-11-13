@@ -8,8 +8,10 @@
 
 	<form [formGroup]="checkBox">
 		<div formArrayName="chkArr">
+			<div *ngFor="let i of controls" [formGroupName]="i">
 				<mat-checkbox formControlName="chk" color="warn" style="margin-top:10px;margin-left:20px;">check me!
 				</mat-checkbox>
+			</div>
 		</div>
 	</form>
 </div>
