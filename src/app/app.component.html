@@ -1,4 +1,15 @@
 <h3>Custom Progress</h3>
+<div class="container">
+	<mat-progress-bar color="primary" [value]="value">
+	</mat-progress-bar>
+	<hr>
 
-<mat-progress-bar color="primary" value="30">
-</mat-progress-bar>
+	<button mat-raised-button (click)="addItem()">Add Item</button><br>
+
+	<form [formGroup]="checkBox">
+		<div formArrayName="chkArr">
+				<mat-checkbox formControlName="chk" color="warn" style="margin-top:10px;margin-left:20px;">check me!
+				</mat-checkbox>
+		</div>
+	</form>
+</div>

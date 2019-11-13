@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
+  value = 30;
+  checkBox: FormGroup;
+  addItem(){
 
+  }
 }
